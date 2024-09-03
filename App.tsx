@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "./src/screens/Home";
@@ -11,9 +11,14 @@ import FriendProfile from "./src/screens/FriendProfile";
 import EditProfile from "./src/screens/EditProfile";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
+type RootStackParamList = {
+    Bottom: undefined;
+    Status: { name: string; image: any };
+    FriendProfile: undefined;
+    EditProfile: undefined;
+};
 
-
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
 
 const BottomTabScreen = () => {
